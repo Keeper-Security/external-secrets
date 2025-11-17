@@ -31,7 +31,7 @@ func TestValidateExternalSecret(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "deletion policy delete",
+			name: "deletion policy delete with merge creation policy",
 			obj: &ExternalSecret{
 				Spec: ExternalSecretSpec{
 					Target: ExternalSecretTarget{
@@ -43,7 +43,19 @@ func TestValidateExternalSecret(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "deletion policy merge",
+			name: "deletion policy delete with none creation policy",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					Target: ExternalSecretTarget{
+						DeletionPolicy: DeletionPolicyDelete,
+						CreationPolicy: CreatePolicyNone,
+					},
+				},
+			},
+			wantErr: true,
+		},
+		{
+			name: "deletion policy merge with none creation policy",
 			obj: &ExternalSecret{
 				Spec: ExternalSecretSpec{
 					Target: ExternalSecretTarget{
@@ -53,6 +65,42 @@ func TestValidateExternalSecret(t *testing.T) {
 				},
 			},
 			wantErr: true,
+		},
+		{
+			name: "valid deletion policy delete with owner creation policy",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					Target: ExternalSecretTarget{
+						DeletionPolicy: DeletionPolicyDelete,
+						CreationPolicy: CreatePolicyOwner,
+					},
+				},
+			},
+			wantErr: false,
+		},
+		{
+			name: "valid deletion policy merge with owner creation policy",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					Target: ExternalSecretTarget{
+						DeletionPolicy: DeletionPolicyMerge,
+						CreationPolicy: CreatePolicyOwner,
+					},
+				},
+			},
+			wantErr: false,
+		},
+		{
+			name: "valid deletion policy merge with merge creation policy",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					Target: ExternalSecretTarget{
+						DeletionPolicy: DeletionPolicyMerge,
+						CreationPolicy: CreatePolicyMerge,
+					},
+				},
+			},
+			wantErr: false,
 		},
 		{
 			name: "generator with find",
@@ -87,12 +135,69 @@ func TestValidateExternalSecret(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "valid",
+			name: "generator without find or extract is valid",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					DataFrom: []ExternalSecretDataFromRemoteRef{
+						{
+							SourceRef: &SourceRef{
+								GeneratorRef: &GeneratorRef{
+									APIVersion: "generators.external-secrets.io/v1alpha1",
+									Kind:       "Password",
+									Name:       "test-generator",
+								},
+							},
+						},
+					},
+				},
+			},
+			wantErr: false,
+		},
+		{
+			name: "multiple dataFrom with mixed validity",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					DataFrom: []ExternalSecretDataFromRemoteRef{
+						{
+							Extract: &ExternalSecretDataRemoteRef{
+								Key: "valid-key",
+							},
+						},
+						{
+							Find: &ExternalSecretFind{},
+							SourceRef: &SourceRef{
+								GeneratorRef: &GeneratorRef{},
+							},
+						},
+					},
+				},
+			},
+			wantErr: true,
+		},
+		{
+			name: "valid with empty dataFrom",
 			obj: &ExternalSecret{
 				Spec: ExternalSecretSpec{
 					DataFrom: []ExternalSecretDataFromRemoteRef{},
 				},
 			},
+			wantErr: false,
+		},
+		{
+			name: "valid with nil dataFrom",
+			obj: &ExternalSecret{
+				Spec: ExternalSecretSpec{
+					DataFrom: nil,
+				},
+			},
+			wantErr: false,
+		},
+		{
+			name: "wrong type object",
+			obj: &SecretStore{
+				Spec: SecretStoreSpec{},
+			},
+			wantErr: true,
 		},
 	}
 	for _, tt := range tests {
