@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../pictures/eso-round-logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1225,6 +1225,8 @@
       
         
       
+        
+      
     
     
     
@@ -1434,6 +1436,34 @@
     
   
     Google Container Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generator/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
   
 
     
@@ -2904,6 +2934,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3012,6 +3048,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../provider/aws-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../provider/azure-key-vault/" class="md-nav__link">
         
   
@@ -3020,6 +3084,34 @@
     
   
     Azure Key Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provider/barbican/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barbican
   
 
     
@@ -3160,34 +3252,6 @@
     
   
     CyberArk Conjur
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../provider/device42/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Device42
   
 
     
@@ -3404,34 +3468,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../provider/alibaba/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alibaba Cloud
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../provider/gitlab-variables/" class="md-nav__link">
         
   
@@ -3496,6 +3532,34 @@
     
   
     Oracle Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provider/ovhcloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OVHcloud
   
 
     
@@ -4097,6 +4161,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provider/devolutions-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devolutions Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provider/nebius-mysterybox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nebius MysteryBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4366,6 +4486,8 @@
       
         
       
+        
+      
     
     
     
@@ -4594,6 +4716,34 @@
     
   
     Burnout Prevention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/llm-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Policy
   
 
     
@@ -4958,11 +5108,13 @@ be transformed and saved as a <code>Kind=Secret</code>:</p>
 <h2 id="update-behavior-with-3-different-refresh-policies">Update behavior with 3 different refresh policies</h2>
 <p>You can control how and when the <code>ExternalSecret</code> is refreshed by setting the <code>spec.refreshPolicy</code> field. If not specified, the default behavior is <code>Periodic</code>.</p>
 <h3 id="createdonce">CreatedOnce</h3>
-<p>With <code>refreshPolicy: CreatedOnce</code>, the controller will:
-- Create the <code>Kind=Secret</code> only if it does not exist yet
-- Never update the <code>Kind=Secret</code> afterwards if the source data changes
-- Update/ Recreate the <code>Kind=Secret</code> if it gets changed/Deleted
-- Useful for immutable credentials or when you want to manage updates manually</p>
+<p>With <code>refreshPolicy: CreatedOnce</code>, the controller will:</p>
+<ul>
+<li>Create the <code>Kind=Secret</code> only if it does not exist yet</li>
+<li>Never update the <code>Kind=Secret</code> afterwards if the source data changes</li>
+<li>Update/ Recreate the <code>Kind=Secret</code> if it gets changed/Deleted</li>
+<li>Useful for immutable credentials or when you want to manage updates manually</li>
+</ul>
 <p>Example:
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
@@ -4973,11 +5125,13 @@ be transformed and saved as a <code>Kind=Secret</code>:</p>
 <span class="w">  </span><span class="c1"># other fields...</span>
 </code></pre></div></p>
 <h3 id="periodic">Periodic</h3>
-<p>With <code>refreshPolicy: Periodic</code> (the default behavior), the controller will:
-- Create the <code>Kind=Secret</code> if it doesn't exist
-- Update the <code>Kind=Secret</code> regularly based on the <code>spec.refreshInterval</code> duration
-- When <code>spec.refreshInterval</code> is set to zero, it will only create the secret once and not update it afterward
-- When <code>spec.refreshInterval</code> is set to a value greater than zero, the controller will update the <code>Kind=Secret</code> at the specified interval or when the <code>ExternalSecret</code> specification changes</p>
+<p>With <code>refreshPolicy: Periodic</code> (the default behavior), the controller will:</p>
+<ul>
+<li>Create the <code>Kind=Secret</code> if it doesn't exist</li>
+<li>Update the <code>Kind=Secret</code> regularly based on the <code>spec.refreshInterval</code> duration</li>
+<li>When <code>spec.refreshInterval</code> is set to zero, it will only create the secret once and not update it afterward</li>
+<li>When <code>spec.refreshInterval</code> is set to a value greater than zero, the controller will update the <code>Kind=Secret</code> at the specified interval or when the <code>ExternalSecret</code> specification changes</li>
+</ul>
 <p>Example:
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
@@ -4985,15 +5139,17 @@ be transformed and saved as a <code>Kind=Secret</code>:</p>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span>
 <span class="nt">spec</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">refreshPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Periodic</span>
-<span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span><span class="w">  </span><span class="c1"># Update every hour</span>
+<span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h0m0s</span><span class="w">  </span><span class="c1"># Update every hour</span>
 <span class="w">  </span><span class="c1"># other fields...</span>
 </code></pre></div></p>
 <h3 id="onchange">OnChange</h3>
-<p>With <code>refreshPolicy: OnChange</code>, the controller will:
-- Create the <code>Kind=Secret</code> if it doesn't exist
-- Update the <code>Kind=Secret</code> only when the <code>ExternalSecret</code>'s metadata or specification changes
-- This policy is independent of the <code>refreshInterval</code> value
-- Useful when you want to manually control when the secret is updated, by modifying the <code>ExternalSecret</code> resource</p>
+<p>With <code>refreshPolicy: OnChange</code>, the controller will:</p>
+<ul>
+<li>Create the <code>Kind=Secret</code> if it doesn't exist</li>
+<li>Update the <code>Kind=Secret</code> only when the <code>ExternalSecret</code>'s metadata or specification changes</li>
+<li>This policy is independent of the <code>refreshInterval</code> value</li>
+<li>Useful when you want to manually control when the secret is updated, by modifying the <code>ExternalSecret</code> resource</li>
+</ul>
 <p>Example:
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
@@ -5077,6 +5233,10 @@ be transformed and saved as a <code>Kind=Secret</code>:</p>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/dockerconfigjson</span><span class="w"> </span><span class="c1"># or TLS...</span>
 
 <span class="w">      </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># Labels and annotations to set on the Secret.</span>
+<span class="w">        </span><span class="c1"># When a template is defined, these replace the default behavior</span>
+<span class="w">        </span><span class="c1"># of copying labels and annotations from the ExternalSecret.</span>
+<span class="w">        </span><span class="c1"># Set to an empty map ({}) to prevent any labels or annotations from being copied.</span>
 <span class="w">        </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">        </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="w">        </span><span class="c1"># The finalizers will be added to the Secret.</span>
@@ -5192,7 +5352,9 @@ be transformed and saved as a <code>Kind=Secret</code>:</p>
         
       </main>
       
-<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=6658a9eb-067d-49f1-94f2-b8b00f21451e"  alt=""/>
+<img referrerpolicy="no-referrer-when-downgrade"
+  src="https://static.scarf.sh/a.png?x-pxid=6658a9eb-067d-49f1-94f2-b8b00f21451e" alt=""
+  hidden />
   
         <footer class="md-footer">
   
@@ -5230,10 +5392,10 @@ For a list of trademarks of The Linux Foundation, please see our <a href="https:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
