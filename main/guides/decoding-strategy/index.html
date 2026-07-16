@@ -1087,6 +1087,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1400,6 +1404,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/generator/beyondtrustworkloadcredentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BeyondTrust Workload Credentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/generator/password/" class="md-nav__link">
         
   
@@ -1492,6 +1524,34 @@
     
   
     Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/generator/gitlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gitlab
   
 
     
@@ -2933,6 +2993,8 @@
       
         
       
+        
+      
     
     
     
@@ -3133,6 +3195,34 @@
     
   
     BeyondTrust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provider/beyondtrustworkloadcredentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BeyondTrust Workload Credentials
   
 
     
@@ -5113,7 +5203,7 @@ It will render the following Kubernetes Secret:
 <p>At this time, decoding Strategy Auto is only trying to check if the original input is valid to perform Base64 operations. As there is no reliable way to detect base64 encoded values, this means that some non-encoded secret values might end up being decoded, producing gibberish. For example, this is the case for alphanumeric values with a length divisible by 4, like <code>1234</code> or <code>happy/street</code>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are using <code>decodeStrategy: Auto</code> and start to see ESO pulling completely wrong secret values into your kubernetes secret, consider changing it to <code>None</code> to investigate it.</p>
+<p>If you are using <code>decodingStrategy: Auto</code> and start to see ESO pulling completely wrong secret values into your kubernetes secret, consider changing it to <code>None</code> to investigate it.</p>
 </div>
 
 

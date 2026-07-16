@@ -1087,6 +1087,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1400,6 +1404,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/generator/beyondtrustworkloadcredentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BeyondTrust Workload Credentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/generator/password/" class="md-nav__link">
         
   
@@ -1492,6 +1524,34 @@
     
   
     Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/generator/gitlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gitlab
   
 
     
@@ -2802,6 +2862,8 @@
       
         
       
+        
+      
     
     
     
@@ -3003,6 +3065,34 @@
     
   
     BeyondTrust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beyondtrustworkloadcredentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BeyondTrust Workload Credentials
   
 
     
@@ -5802,7 +5892,7 @@ You can use either of the approaches described in the previous two sections.</p>
 <span class="w">      </span><span class="nt">projectID</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">PROJECT_ID</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>Alternatively, with projectID auto-detection (GKE only):</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
@@ -5820,7 +5910,7 @@ You can use either of the approaches described in the previous two sections.</p>
 <li>With <strong><code>auth.secretRef</code></strong>, <code>projectID</code> is <strong>required</strong> (no metadata fallback).</li>
 </ul>
 <p>This allows portable <code>SecretStore</code> configurations on GKE without hard-coding the project when the above conditions hold:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
@@ -6073,7 +6163,7 @@ This approach can be used on any Kubernetes cluster.</p>
 </code></pre></div>
 <h2 id="secret-replication-and-encryption-configuration">Secret Replication and Encryption Configuration</h2>
 <h3 id="location-and-replication">Location and Replication</h3>
-<p>By default, secrets are automatically replicated across multiple regions. You can specify a single location for your secrets by setting the <code>replicationLocation</code> field:</p>
+<p>By default, secrets are automatically replicated across multiple regions. You can specify one or more replication locations for your secrets by setting the <code>replicationLocations</code> field:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1alpha1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PushSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
@@ -6089,7 +6179,8 @@ This approach can be used on any Kubernetes cluster.</p>
 <span class="w">        </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.external-secrets.io/v1alpha1</span>
 <span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PushSecretMetadata</span>
 <span class="w">        </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">replicationLocation</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;us-east1&quot;</span>
+<span class="w">          </span><span class="nt">replicationLocations</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;us-east1&quot;</span>
 </code></pre></div>
 <h3 id="customer-managed-encryption-keys-cmek">Customer-Managed Encryption Keys (CMEK)</h3>
 <p>You can use your own encryption keys to encrypt secrets at rest. To use Customer-Managed Encryption Keys (CMEK), you need to:</p>
@@ -6129,7 +6220,7 @@ This approach can be used on any Kubernetes cluster.</p>
 <h2 id="regional-secrets">Regional Secrets</h2>
 <p>GCP Secret Manager Regional Secrets are available to be used with both ExternalSecrets and PushSecrets.</p>
 <p>In order to achieve so, add a <code>location</code> to your SecretStore definition:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
@@ -6149,7 +6240,7 @@ This approach can be used on any Kubernetes cluster.</p>
 <li><strong><code>LatestOrFetch</code></strong>: The provider falls back to fetching the latest enabled version if the "latest" version is DESTROYED or DISABLED.</li>
 </ul>
 <h4 id="configuration-example">Configuration Example</h4>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
